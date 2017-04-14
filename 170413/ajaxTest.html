@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajaxTest</title>
+</head>
+<body>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<script>
+    //이클립스 ajax연동해서 성공이라는 메시지 받아와야함.
+    $(document).ready(function (e) {
+        //5.객체생성 : 왜 JSON 문자열로 바꿔야할까?? JSON 데이터처리 메소드 두개는 반드시 알아야함.
+        // 소켓통신한다고 하면 문자열이 다름. 1.문자열 처리 2.다양한전송방법에 따른 JSON포맷사용 3.get/post 말고 다른 방법 처리할때 JSON메소드 사용
+        var obj = {};
+        obj.id='aaa';
+        obj.pw='bbb';
+        obj['addr'] ='Seoul';
+
+        var textStr = '{"id":"aaa","pw":"bbb","addr":"Seoul"}';
+        var resultObj = JSON.parse(textStr);// eval대신 만들어진 함수
+
+        console.dir(resultObj);
+
+        //1.두가지 방법있음 파라미터 던지는법과 settings
+        $.post("http://192.168.0.16:8081/postTest",
+            //2.post방식으로 파라미터 넣어야함. 키:값
+            {sno:3, review:'섬큔이는 자리에서 일어나서 화이팅을 외쳐라',score:5},
+            function (result) {
+                console.log(result); // 3.팝업떴따가 히든으로 사라지게 나중에 처리
+            },
+            "text");
+
+        $.getJSON("http://192.168.0.16:8081/store",{lat:37.123456, lng:127.432455},function (arr) {
+            console.log(arr);//4. json배열로 나오니 arr로 잡음.
+        });//get방식으로 Json(문자열)가져오기
+    });
+
+</script>
+
+
+</body>
+</html>

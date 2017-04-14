@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>img gallery</title>
+</head>
+<body>
+
+<style>
+    .imgArea{
+       background : -webkit-linear-gradient(bottom, #e4f5fc 0%,#bfe8f9 40%,#2ab0ed 100%);
+    }
+    .imgArea img    {
+
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        overflow:hidden;
+        -webkit-transform:scale(1.2);
+        -webkit-transform:scale(1);
+    }
+
+    
+    .inner3{
+        background: -webkit-linear-gradient(bottom,#fdff51,#daff5a,#98ff43);
+        width: 800px;
+        height: 800px;
+    }
+    .popup{
+        position: absolute;
+        left:50%;
+        top: 50%;
+        height: 200px;
+        width: 300px;
+        margin-left: -150px;
+        margin-top: -100px;
+        background-color: hotpink;
+        border: 1px crimson;
+
+    }
+    
+</style>
+
+
+<div class="imgArea">
+
+        <img id="img1" src="goara.jpg">
+        <img id="img2" src="hegyo.jpg">
+        <img id="img3" src="taehee.jpg">
+        <img id="img4" src="iu.jpg">
+        <img id="img5" src="suji.jpg">
+        <img id="img6" src="yejin.jpg">
+
+    </div>
+
+<div class="inner3">
+ <div class="popup" style = "display: none">>
+
+ </div>
+
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+
+</script>
+<script>
+   var $imgBtn = $(".imgArea");
+   var $imgView = $(".inner3");
+
+   $("#img1").on("click",function (e) {
+      $(".popup").show("slow").append("<img src='goara.jpg'>");
+
+      });
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

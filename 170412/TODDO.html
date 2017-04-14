@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .canc {
+        margin-left: 10px;
+
+    }
+
+
+</style>
+
+
+<div class="outer">
+    <input type="text" name="inputText">
+    <button id="btn">입력</button>
+</div>
+<div class="inner">
+    <ul class="ULC">
+        <div class="pop">
+
+
+        </div>
+
+    </ul>
+
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function(){
+
+        var $inputObj = $("input[name='inputText']");
+        var $btnObj = $("#btn");
+        var $ulObj=$(".ULC");
+        var $outerObj = $(".outer");
+        var $innerObj = $(".inner");
+        var $cancle = $(".canc");
+
+        $btnObj.on("click",function (e) {
+
+            var $content = $inputObj.val();
+            $inputObj.val("");
+
+
+                $ulObj.append("<li>"+$content+"<button class = 'canc'> x </button></li>");
+
+
+
+        });
+        $ulObj.on("click","li .canc",function(e){
+            $(this).parent().remove();
+
+        });
+        $ulObj.on("click","li",function (e) {
+
+            var liText= $(this).text(); //this =li
+            $(this).html("<input type='text' value="+ liText+"><button class = 'canc'> x </button><button id='mod'>수정</button>");
+
+
+            $("li").on("click",function (e) {
+                e.stopPropagation();
+
+            });
+        });
+
+        $("#mod").on("click",function (e) {
+
+
+
+        });
+
+
+
+//
+//            });
+//            $("#mod").on("click",function (e) {
+//                e.stopPropagation();
+//                console.log($(this).parent()[0].firstChild.value);
+//                var content2 = $(this).parent()[0].firstChild.value;
+//
+//                $(this).parent()[0].innerHTML="<li>"+content2+"</li>"
+//                console.dir($(this).parent()[0])
+//                console.log($(this).parent()[0].innerHTML)
+//            });
+
+
+
+
+
+    });
+
+
+</script>
+</body>
+</html>

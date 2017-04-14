@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent; }
+
+    .outer {
+        text-align: center;
+        width:100%;
+        height:800px;
+        -webkit-transform-style: preserve-3d;
+        -webkit-perspective: 800px;
+        -webkit-perspective-origin: 50% 300px;
+        -webkit-transition-duration: 2s;
+    }
+
+    .inner {
+        width:400px;
+        height:400px;
+        /*background-color: cyan;*/
+        position: absolute;
+        top:50%;
+        left:50%;
+        margin-top: -200px;
+        margin-left: -200px;
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition-duration: 2s;
+    }
+
+    .ex1 {
+        -webkit-transform: rotateY(-180deg);
+    }
+
+    .control {
+        position: absolute;
+        border: 5px solid blue;
+        top:0px;
+        left:300px;
+        z-index: 100;
+        height:200px;
+        width:200px;
+    }
+
+    .inner div {
+        position: absolute;
+        width:400px;
+        height:400px;
+        opacity: 0.5;
+        z-index: 100;
+    }
+
+    .f1 {
+        background-color: blue;
+        -webkit-transform: rotateY(90deg) translateZ(200px);
+    }
+    .f2 { background-color: red;
+        -webkit-transform: rotateY(-90deg) translateZ(200px);
+    }
+    .f3 { background-color: green;
+        -webkit-transform: rotateY(180deg) translateZ(200px);
+    }
+    .f4 { background-color: chocolate;
+        -webkit-transform: rotateY(0deg) translateZ(200px);
+    }
+
+    .f2 img, video{
+        width:400px;
+        height:400px;
+    }
+
+</style>
+
+<div class="control">
+    <ul>
+        <li data-job="A" >좌로회전</li>
+        <li data-job="B" >우로회전</li>
+        <li data-job="C" >위로회전</li>
+        <li data-job="D" >아래로회전</li>
+    </ul>
+</div>
+
+
+<div class="outer">
+    OUTER
+    <div id='target' class="inner">
+        <div class="facet f1"><audio></audio>F1</div>
+        <div class="facet f2"><img src="iu.jpg">F2</div>
+        <div class="facet f3"><audio controls src="aaa.mp3">F3</div>
+        <div class="facet f4"><video controls src="logan.mp4">F4</video></div>
+    </div>
+
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+<script>
+
+    //$("#target").addClass("ex1");
+
+    $(".control ul li").on("click", function(e){
+
+        var job = $(this).attr("data-job");
+
+        console.log("job: " + job);
+
+        if(job == 'A'){
+            $("#target").toggleClass("ex1");
+        }
+
+    });
+
+
+</script>
+
+
+</body>
+</html>

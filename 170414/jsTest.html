@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+
+</script>
+
+<script>
+    //서버로 요청, 파라미터 이걸로 보내면, 서버에서 그 파라미터 찾아서 보냄.
+    $.ajax({
+       url : "http://192.168.0.16:8081/js?mycall=doA",
+        dataType: "jsonp",
+//        jsonp:'callback',
+        success : function (res) {
+           console.log(res);
+        }
+        
+        
+    });
+    //받아온 스크립트 파일 실행
+    function doA(arr) {
+        console.log("-------------------");
+        console.log(arr);
+        console.log("-------------------");
+    }
+
+</script>
+
+</body>
+</html>

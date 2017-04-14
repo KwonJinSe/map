@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <button id="startBtn">Start</button>
+    <button id="endBtn">End</button>
+    <hr/>
+    <h2 class="result"></h2>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+<script>
+
+    var fn = null;
+
+    $("#endBtn").on("click",function () {
+       clearInterval(fn);
+    });
+
+    $("#startBtn").on("click",function(e){
+
+        var num = 0;
+
+
+        fn = setInterval(function () {
+            //여기에 ajax드러와야함
+            $.get("http://localhost:8080/ajaxEx/data.jsp",function (res) {
+                $('.result').html("NUM: "+ ++num);
+            })
+
+        },1000);
+
+    });
+
+</script>
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .inner0{
+        width: 220px;
+    }
+    .inner{
+        margin-top: 10px;
+        float: left;
+        width: 100px;
+        padding: 5px;
+    }
+.inner2 {
+    margin-top: 10px;
+    float: right;
+    width: 110px;
+}
+ .inner2 button {
+        padding: 10px;
+        margin: 1px;
+    }
+
+
+
+</style>
+
+
+<div class="outer">
+<input type = "text" name="text1">
+</div>
+<div class="inner0">
+<div class="inner">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button></br>
+    <button>4</button>
+    <button>5</button>
+    <button>6</button></br>
+    <button>7</button>
+    <button>8</button>
+    <button>9</button></br>
+    <button>0</button>
+    <button>C</button>
+
+</div>
+<div class="inner2">
+    <button>+</button>
+    <button>-</button></br>
+    <button>*</button>
+    <button>/</button>
+    <button><</button>
+    <button>계산</button>
+</div>
+</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<script>
+
+    var $inputText = $( "input[name='text1']" );
+    var $outerObj = $(".outer");
+    var $innerObj = $(".inner");
+    var $inner0Obj = $(".inner0");
+    var $inner2Obj = $(".inner2");
+
+    $(document).ready(function () {
+
+        $innerObj.on("click",function (e) {
+            var content = $inputText.val();
+
+
+
+
+        });
+
+
+    });
+
+
+</script>
+
+
+</body>
+
+
+
+</html>

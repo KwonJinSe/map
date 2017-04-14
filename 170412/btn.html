@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button class="btn" >btn1</button>
+<button class="btn">btn2</button>
+<button class="btn">btn3</button>
+<button class="btn">btn4</button>
+<button class="btn">btn5</button>
+
+
+
+
+
+
+</body>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $(".btn").click(function (e) { //제이쿼리에서는 event를 e로 씀.
+
+            console.log("click");
+
+        });
+
+    });
+
+</script>
+
+</html>

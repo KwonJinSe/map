@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+
+<body>
+
+<button id="show">Show</button>
+<button id="hide">Hide</button>
+
+<img id="sampleimg" src ="aa.jpg">
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+
+<script>
+
+    $("#show").click(function (event) {
+        $("#sampleimg").show('slow');
+    });
+
+    $("#hide").click(function (event) {
+        $("#sampleimg").hide('slow');
+    });
+
+
+</script>
+
+
+
+
+</body>
+</html>
